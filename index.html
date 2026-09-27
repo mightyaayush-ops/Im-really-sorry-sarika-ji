@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sarika 💜</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    background:linear-gradient(135deg,#d9c2f0,#f1e7fa,#c9a9e8);
+    font-family:'Poppins',sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.phone{
+    width:390px;
+    max-width:100%;
+    height:850px;
+    max-height:100vh;
+    background:#fbf8ff;
+    border:7px solid #24142d;
+    border-radius:38px;
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 20px 60px rgba(72,32,96,.35);
+}
+
+.notch{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:110px;
+    height:24px;
+    background:#24142d;
+    border-radius:0 0 18px 18px;
+    z-index:50;
+}
+
+.page{
+    position:absolute;
+    inset:0;
+    display:none;
+    flex-direction:column;
+    animation:show .5s ease;
+}
+
+.page.active{
+    display:flex;
+}
+
+@keyframes show{
+    from{
+        opacity:0;
+        transform:translateX(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+.header{
+    padding:55px 22px 15px;
+    text-align:center;
+    color:#572477;
+}
+
+.header h1{
+    font-family:'DM Serif Display',serif;
+    font-size:32px;
+    margin:5px 0;
+}
+
+.header p{
+    color:#9570ad;
+    font-size:12px;
+}
+
+.content{
+    flex:1;
+    overflow-y:auto;
+    padding:10px 20px 25px;
+}
+
+.card{
+    background:rgba(255,255,255,.9);
+    border:1px solid #eadcf4;
+    border-radius:22px;
+    padding:22px;
+    margin:13px 0;
+    box-shadow:0 8px 25px rgba(93,47,119,.10);
+    text-align:center;
+}
+
+.card h2{
+    font-family:'DM Serif Display',serif;
+    color:#61277e;
+    font-size:27px;
+    margin:5px 0 12px;
+}
+
+.card p{
+    color:#5e4a68;
+    font-size:14px;
+    line-height:1.75;
+}
+
+.emoji{
+    font-size:70px;
+    animation:heartbeat 1.4s infinite;
+}
+
+@keyframes heartbeat{
+    50%{
+        transform:scale(1.12);
+    }
+}
+
+.btn-area{
+    padding:12px 20px 25px;
+}
+
+button{
+    width:100%;
+    border:0;
+    padding:15px;
+    border-radius:17px;
+    background:linear-gradient(135deg,#7d3baa,#9d5bc5);
+    color:white;
+    font-weight:700;
+    font-size:14px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(110,55,145,.25);
+}
+
+button.light{
+    background:#eee0f8;
+    color:#642b80;
+}
+
+.quote{
+    background:linear-gradient(135deg,#f0e3fa,#e2cef2);
+    border-radius:20px;
+    padding:18px;
+    color:#61277e;
+    font-family:'DM Serif Display',serif;
+    font-size:20px;
+    line-height:1.5;
+    text-align:center;
+    margin:15px 0;
+}
+
+.meme{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    margin:15px 0;
+    box-shadow:0 7px 22px rgba(82,39,108,.12);
+    border:1px solid #eadcf4;
+}
+
+.meme-top{
+    background:#eee0f8;
+    padding:10px;
+    font-size:11px;
+    font-weight:700;
+    color:#71328e;
+}
+
+.meme-body{
+    padding:22px 16px;
+    text-align:center;
+}
+
+.meme-emoji{
+    font-size:55px;
+    margin-bottom:8px;
+}
+
+.meme-body h3{
+    margin:5px;
+    color:#572477;
+}
+
+.meme-body p{
+    color:#68536f;
+    font-size:13px;
+    line-height:1.6;
+}
+
+.photo-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.photo{
+    background:#fff;
+    padding:8px 8px 13px;
+    border-radius:8px;
+    box-shadow:0 5px 18px rgba(75,35,98,.15);
+}
+
+.photo img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:5px;
+    background:#eee0f8;
+}
+
+.photo span{
+    display:block;
+    text-align:center;
+    font-size:11px;
+    color:#71328e;
+    margin-top:8px;
+    font-weight:600;
+}
+
+.heart{
+    position:absolute;
+    font-size:23px;
+    animation:float 6s linear infinite;
+    opacity:.65;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(900px) rotate(0deg);
+    }
+    to{
+        transform:translateY(-100px) rotate(360deg);
+    }
+}
+
+.promise{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    text-align:left;
+    margin:12px 0;
+    padding:13px;
+    border-radius:15px;
+    background:#f5edfa;
+}
+
+.promise b{
+    color:#642b80;
+}
+
+.promise span{
+    font-size:27px;
+}
+
+.big{
+    font-size:90px;
+}
+
+.final{
+    background:linear-gradient(135deg,#f1e3fa,#e4cef2);
+}
+
+.center{
+    text-align:center;
+}
+
+.small{
+    font-size:11px;
+    color:#9873a9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="phone">
+
+<div class="notch"></div>
+
+<!-- FLOATING HEARTS -->
+<div class="heart" style="left:8%;animation-delay:0s;">💜</div>
+<div class="heart" style="left:25%;animation-delay:2s;">✨</div>
+<div class="heart" style="left:48%;animation-delay:4s;">💗</div>
+<div class="heart" style="left:70%;animation-delay:1s;">🌸</div>
+<div class="heart" style="left:88%;animation-delay:3s;">💜</div>
+
+
+<!-- PAGE 1 -->
+
+<section class="page active" id="page0">
+
+<div class="header">
+    <h1>For Sarika 💜</h1>
+    <p>Ek chhoti si baat dil se...</p>
+</div>
+
+<div class="content">
+
+<div class="card">
+
+<div class="emoji">🥺💜</div>
+
+<h2>I'm Really Sorry</h2>
+
+<p>
+Sarika... mujhe pata hai maine kaha tha ki main tumhe call karunga
+aur phir main call nahi kar paya.
+</p>
+
+<p>
+Shayad mere liye ye ek missed call thi...
+lekin tumhare liye shayad meri baat ka tootna tha.
+</p>
+
+<p>
+Aur honestly mujhe ye sochkar hi bura lag raha hai ki
+meri wajah se tum hurt hui.
+</p>
+
+</div>
+
+<div class="quote">
+"Maafi maangna aasaan hai...
+par tumhari narazgi dekhna mere liye bilkul aasaan nahi." 💜
+</div>
+
+</div>
+
+<div class="btn-area">
+<button onclick="nextPage()">
+Meri baat ek baar poori sunogi? 🥺
+</button>
+</div>
+
+</section>
+
+
+<!-- PAGE 2 -->
+
+<section class="page" id="page1">
+
+<div class="header">
+<h1>Ek Mahina... 💜</h1>
+<p>Bas ek mahina hua hai humein baat karte</p>
+</div>
+
+<div class="content">
+
+<div class="card">
+
+<div class="emoji">🫶</div>
+
+<h2>But It Feels Different</h2>
+
+<p>
+Ham dono ko baat karte sirf ek mahina hua hai...
+</p>
+
+<p>
+Phir bhi pata nahi kyun kabhi kabhi aisa lagta hai
+jaise na jaane kitne samay se tumse baat kar raha hoon.
+</p>
+
+<p>
+Tumhari aadat kab ban gayi...
+shayad mujhe khud pata nahi chala.
+</p>
+
+<p>
+Aur sach kahun to jis din tumse baat nahi hoti
+wo din thoda adhoora sa lagta hai.
+</p>
+
+</div>
+
+<div class="meme">
+
+<div class="meme-top">
+ME WHEN SARIKA DOESN'T TEXT 😭
+</div>
+
+<div class="meme-body">
+
+<div class="meme-emoji">👀📱</div>
+
+<h3>"Bas ek message kar de..."</h3>
+
+<p>
+Phone 100 baar check karne wala banda
+main nahi hoon...
+<br>
+Bas tumhara message important hai. 😂💜
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="btn-area">
+<button onclick="nextPage()">
+Ek aur card hai tumhare liye 💌
+</button>
+</div>
+
+</section>
+
+
+<!-- PAGE 3 SORRY MEMES -->
+
+<section class="page" id="page2">
+
+<div class="header">
+<h1>My Sorry Collection 🥺</h1>
+<p>Har card meri taraf se ek sorry</p>
+</div>
+
+<div class="content">
+
+<div class="meme">
+
+<div class="meme-top">
+SORRY LEVEL: 1000000%
+</div>
+
+<div class="meme-body">
+
+<div class="meme-emoji">🙇‍♂️💜</div>
+
+<h3>Maaf Kar Do Please</h3>
+
+<p>
+Main bahane nahi banaunga.
+Galti meri thi.
+Bas dil se sorry.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="meme">
+
+<div class="meme-top">
+WHEN SHE IS ANGRY 😭
+</div>
+
+<div class="meme-body">
+
+<div class="meme-emoji">🥲🌸</div>
+
+<h3>"Ab kya karun main?"</h3>
+
+<p>
+Tum naraz ho...
+main chup baitha hoon...
+aur dimaag mein sirf ek hi thought:
+<br><br>
+<b>"Sarika ko kaise hasaun?"</b>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="meme">
+
+<div class="meme-top">
+EMERGENCY ANNOUNCEMENT 🚨
+</div>
+
+<div class="meme-body">
+
+<div class="meme-emoji">🚨💜</div>
+
+<h3>Sarika Ki Smile Missing Hai!</h3>
+
+<p>
+Investigation chal rahi hai...
+aur culprit main hoon. 😭
+<br>
+Ab mission hai tumhari smile wapas lana.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="btn-area">
+<button onclick="nextPage()">
+Mission: Make Sarika Smile 🌸
+</button>
+</div>
+
+</section>
+
+
+<!-- PAGE 4 SMILE -->
+
+<section class="page" id="page3">
+
+<div class="header">
+<h1>My Favourite Mission 💜</h1>
+<p>Operation: Bring Her Smile Back</p>
+</div>
+
+<div class="content">
+
+<div class="card">
+
+<div class="emoji">😊🌸</div>
+
+<h2>Your Smile Matters</h2>
+
+<p>
+Main nahi jaanta abhi tum kitni naraz ho...
+aur shayad tumhe thoda space bhi chahiye.
+</p>
+
+<p>
+Lekin dil se ek baat kehna chahta hoon...
+</p>
+
+<p>
+Main life mein chahe jaisa bhi rahun,
+main hamesha ye chahta hoon ki
+tum jab bhi mere baare mein socho
+tumhare chehre par ek chhoti si muskan aa jaye.
+</p>
+
+</div>
+
+<div class="quote">
+"Main tumhari zindagi ka bojh nahi banna chahta...
+agar kabhi banun to bas tumhari muskurahat ki ek wajah." 💜
+</div>
+
+</div>
+
+<div class="btn-area">
+<button onclick="nextPage()">
+Thodi si pampering bhi banti hai 🫶
+</button>
+</div>
+
+</section>
+
+
+<!-- PAGE 5 CARE -->
+
+<section class="page" id="page4">
+
+<div class="header">
+<h1>Take Care, Sarika 🌸</h1>
+<p>Aaj meri taraf se extra care</p>
+</div>
+
+<div class="content">
+
+<div class="card">
+
+<div class="emoji">🫂🌸</div>
+
+<h2>No Pressure</h2>
+
+<p>
+Aaj agar mood thoda off hai
+to koi baat nahi.
+</p>
+
+<p>
+Tumhe har waqt smile karna zaroori nahi.
+Kabhi kabhi bas rest karna
+aur apne aap ko thoda pamper karna bhi zaroori hai.
+</p>
+
+<p>
+Paani peena...
+kuch achcha sa khana...
+thoda rest...
+aur khud ka khayal rakhna. 💜
+</p>
+
+</div>
+
+
+<div class="promise">
+
+<span>🌷</span>
+<div>
+<b>Rule No. 1</b><br>
+Aaj khud ko unnecessarily stress nahi karna.
+</div>
+</div>
+
+
+<div class="promise">
+
+<span>🍫</span>
+<div>
+<b>Rule No. 2</b><br>
+Jo cheez tumhe comfort de... woh karo.
+</div>
+</div>
+
+
+<div class="promise">
+
+<span>🫂</span>
+<div>
+<b>Rule No. 3</b><br>
+Aur meri taraf se ek warm virtual hug.
+</div>
+</div>
+
+</div>
+
+<div class="btn-area">
+<button onclick="nextPage()">
+Ab meri ek chhoti si baat 💜
+</button>
+</div>
+
+</section>
+
+
+<!-- PAGE 6 PHOTOS -->
+
+<section class="page" id="page5">
+
+<div class="header">
+<h1>Somewhere In My Gallery 💜</h1>
+<p>Tumhari photos ke liye ek special corner</p>
+</div>
+
+<div class="content">
+
+<div class="photo-grid">
+
+<div class="photo">
+<img src="sarika1.jpg" alt="Sarika Photo 1">
+<span>That smile 💜</span>
+</div>
+
+<div class="photo">
+<img src="sarika2.jpg" alt="Sarika Photo 2">
+<span>Beautiful you 🌸</span>
+</div>
+
+<div class="photo">
+<img src="sarika3.jpg" alt="Sarika Photo 3">
+<span>One little memory ✨</span>
+</div>
+
+<div class="photo">
+<img src="sarika4.jpg" alt="Sarika Photo 4">
+<span>My favourite person 💜</span>
+</div>
+
+</div>
+
+<div class="card">
+
+<p>
+Photos to bas photos hoti hain...
+<br>
+lekin jab kisi apne ki ho
+to unki value thodi zyada ho jaati hai. 💜
+</p>
+
+</div>
+
+<p class="small">
+Apni photos ke naam sarika1.jpg se sarika4.jpg rakhna.
+</p>
+
+</div>
+
+<div class="btn-area">
+<button onclick="nextPage()">
+Last few words... 💌
+</button>
+</div>
+
+</section>
+
+
+<!-- PAGE 7 PROMISE -->
+
+<section class="page" id="page6">
+
+<div class="header">
+<h1>A Small Promise 🤍</h1>
+<p>Perfect hone ka nahi...</p>
+</div>
+
+<div class="content">
+
+<div class="card">
+
+<div class="emoji">🤝💜</div>
+
+<h2>I Will Try Better</h2>
+
+<p>
+Main ye promise nahi karunga ki mujhse kabhi galti nahi hogi.
+Insaan hoon... galti ho sakti hai.
+</p>
+
+<p>
+Lekin jab meri wajah se tum hurt hogi
+to main us feeling ko ignore nahi karunga.
+</p>
+
+<p>
+Tumhari feelings mere liye matter karti hain.
+</p>
+
+</div>
+
+<div class="quote">
+"Rishton mein perfection nahi...
+samajh, izzat aur ek doosre ko sambhalne ki koshish zaroori hoti hai." 💜
+</div>
+
+</div>
+
+<div class="btn-area">
+<button onclick="nextPage()">
+Final message for Sarika 💗
+</button>
+</div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="page final" id="page7">
+
+<div class="header">
+<h1>One Last Thing...</h1>
+<p>please read this slowly 💜</p>
+</div>
+
+<div class="content">
+
+<div class="card">
+
+<div class="big">💜</div>
+
+<h2>Sarika...</h2>
+
+<p>
+Aaj maine tumhe hurt kiya
+aur honestly mujhe iska bahut bura feel ho raha hai.
+</p>
+
+<p>
+Main pata nahi kya karun jisse tumhare chehre par
+phir se wahi pyari si muskan aa jaye.
+</p>
+
+<p>
+Bas itna chahta hoon ki jab bhi tum meri life mein
+mere baare mein socho...
+to tumhe ye yaad aaye ki
+ek insaan tha jo tumhari smile ko
+hamesha important samajhta tha.
+</p>
+
+<p>
+Main tumhari life mein zabardasti koi jagah nahi banana chahta.
+Bas jitni jagah tum apne dil se do
+utni jagah ko hamesha izzat se rakhna chahta hoon.
+</p>
+
+<p>
+<b>
+Aur haan...
+I'm genuinely sorry Sarika.
+Mujhe maaf kar do. 🥺💜
+</b>
+</p>
+
+</div>
+
+<div class="quote">
+"Ek mahina hua hai...
+par tumse baat karna kab dil ki aadat ban gaya
+pata hi nahi chala." 💜
+</div>
+
+</div>
+
+<div class="btn-area">
+
+<button onclick="forgive()">
+🥺 Maaf kiya? 💜
+</button>
+
+<br><br>
+
+<button class="light" onclick="restart()">
+💌 Read Again
+</button>
+
+</div>
+
+</section>
+
+</div>
+
+
+<script>
+
+let currentPage = 0;
+
+const pages = document.querySelectorAll(".page");
+
+function showPage(number){
+
+    pages.forEach((page,index)=>{
+        page.classList.toggle("active",index === number);
+    });
+
+    currentPage = number;
+}
+
+function nextPage(){
+
+    if(currentPage < pages.length - 1){
+        showPage(currentPage + 1);
+    }
+
+}
+
+function restart(){
+
+    showPage(0);
+
+}
+
+function forgive(){
+
+    alert("Yayyy 🥺💜 Thank you Sarika... Ab please ek smile kar do 🌸");
+
+}
+
+</script>
+
+</body>
+  </html>
